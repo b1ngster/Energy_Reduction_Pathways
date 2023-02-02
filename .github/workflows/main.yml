@@ -6,7 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      steps:
       - name: pulling git repo
         uses: actions/checkout@v2
         # for backend(django-app)
@@ -18,7 +17,7 @@ jobs:
       - name: Run make4ht
         uses: docker://ghcr.io/michal-h21/make4ht-action:latest
         env:
-        command: 'make4ht -c my.cfg -ua debug -d out main.tex "fn-in" '
+         command: 'make4ht -c my.cfg -ua debug -d out main.tex "fn-in" '
         
       - name: Create index tex
         run: |
