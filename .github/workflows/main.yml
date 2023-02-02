@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Create index tex
+      run: |
+          sudo ls 
     - name: Run make4ht
       # uses: michal-h21/make4ht-action@master
       uses: docker://ghcr.io/michal-h21/make4ht-action:latest
