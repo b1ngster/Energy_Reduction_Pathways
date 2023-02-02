@@ -1,32 +1,27 @@
 name: CI
 
 on: [push]
-
+defaults:
+  run:
+    working-directory: report
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: pulling git repo
-        uses: actions/checkout@v2
-        # for backend(django-app)
-      - name: Checkout files
-        uses: Bhacaz/checkout-files@v2
-        with:
-          files: report
- 
-      - name: Run make4ht
-        uses: docker://ghcr.io/michal-h21/make4ht-action:latest
-        env:
-         command: 'make4ht -c my.cfg -ua debug -d out main.tex "fn-in" '
-        
-      - name: Create index tex
-        run: |
+    - uses: actions/checkout@v1
+    - name: Run make4ht
+      # uses: michal-h21/make4ht-action@master
+      uses: docker://ghcr.io/michal-h21/make4ht-action:latest
+      env:
+        command: 'make4ht -c my.cfg -ua debug -d out main.tex "fn-in" '
+    - name: Create index tex
+      run: |
           sudo mv ./out/main.html ./out/index.html
-          shell: bash  
-      - name: Publish the web pages
-        uses:  peaceiris/actions-gh-pages@v3
-        with:
+      shell: bash  
+    - name: Publish the web pages
+      uses:  peaceiris/actions-gh-pages@v3
+      with:
         # ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         # PUBLISH_BRANCH: gh-pages
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: ./out
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
