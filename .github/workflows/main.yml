@@ -19,7 +19,7 @@ jobs:
           sudo ls report
     - name: Create index tex
       run: |
-          sudo mv .report/out/main.html ./report/out/index.html
+          sudo mv ./report/out/main.html ./report/out/index.html
       shell: bash  
     - name: Publish the web pages
       uses:  peaceiris/actions-gh-pages@v3
