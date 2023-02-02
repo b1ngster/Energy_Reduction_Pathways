@@ -2,10 +2,6 @@ name: CI
 
 on: [push]
 
-defaults:
-  run:
-    working-directory: ./report
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,7 +9,7 @@ jobs:
     - name: checkout-files
       uses: Bhacaz/checkout-files@v2
       with:
-          files: ./report
+          files: report
     - name: Run make4ht
       
       # uses: michal-h21/make4ht-action@master
