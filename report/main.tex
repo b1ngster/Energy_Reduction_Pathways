@@ -11,7 +11,16 @@
 \usepackage{listings}
 
 
-\usepackage{biblatex}
+\usepackage[
+    backend=biber,
+    style=authoryear-icomp,
+    sortlocale=de_DE,
+    natbib=true,
+    url=false, 
+    doi=true,
+    eprint=false
+]{biblatex}
+\addbibresource{references.bib}
 
 \newcommand{\cmdname}[1]{\texttt{#1}}
 \newcommand\footurl[1]{\footnote{\url{#1}}}
