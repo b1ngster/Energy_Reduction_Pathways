@@ -3,7 +3,7 @@ name: CI
 on: [push]
 defaults:
   run:
-    working-directory: report
+    working-directory: ./report
 jobs:
   build:
     runs-on: ubuntu-latest
