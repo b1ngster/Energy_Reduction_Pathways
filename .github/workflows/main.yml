@@ -1,14 +1,14 @@
 name: CI
 
 on: [push]
-defaults:
-      run:
-        working-directory: report
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./report
     steps:
     - uses: actions/checkout@v1
     - name: Run make4ht
