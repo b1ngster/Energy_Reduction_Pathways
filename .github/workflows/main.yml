@@ -6,11 +6,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout-files
-      uses: Bhacaz/checkout-files@v2
-      with:
+      steps:
+      - name: pulling git repo
+        uses: actions/checkout@v2
+        # for backend(django-app)
+      - name: Checkout files
+        uses: Bhacaz/checkout-files@v2
+        with:
           files: report
-    - name: Run make4ht
+ 
+      - name: Run make4ht
       
       # uses: michal-h21/make4ht-action@master
      
