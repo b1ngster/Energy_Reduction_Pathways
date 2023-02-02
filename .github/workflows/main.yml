@@ -12,7 +12,7 @@ jobs:
       uses: docker://ghcr.io/michal-h21/make4ht-action:latest
       env:
        extra_packages: "texlive-bibtex-extra"
-       command: 'cd report; make4ht -c my.cfg -e mybuild.mk4-ua debug -d out main.tex "fn-in" '
+       command: 'cd report; sudo apt-get update; make4ht -c my.cfg -e mybuild.mk4-ua debug -d out main.tex "fn-in" '
     - name: Create index tex
       run: |
           sudo mv ./report/out/main.html ./report/out/index.html
