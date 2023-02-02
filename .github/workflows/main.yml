@@ -2,6 +2,9 @@ name: CI
 
 on: [push]
 
+defaults:
+  run:
+    working-directory: report
 
 jobs:
   build:
