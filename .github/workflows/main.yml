@@ -25,8 +25,8 @@ jobs:
           sudo mv ./out/main.html ./out/index.html
           shell: bash  
       - name: Publish the web pages
-      uses:  peaceiris/actions-gh-pages@v3
-         with:
+        uses:  peaceiris/actions-gh-pages@v3
+        with:
         # ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         # PUBLISH_BRANCH: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
