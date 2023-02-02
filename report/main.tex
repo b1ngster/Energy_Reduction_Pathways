@@ -6,9 +6,12 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{shapes}
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{listings}
+
+\usepackage{biblatex}
+\addbibresource{sample.bib}
 
 \newcommand{\cmdname}[1]{\texttt{#1}}
 \newcommand\footurl[1]{\footnote{\url{#1}}}
@@ -84,7 +87,7 @@ denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{
 	\subsection{Future work}
 
 \bibliographystyle{unsrt}
-%\bibliography{references}
+\bibliography{references}
 
 \end{document}
  
